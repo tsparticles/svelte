@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Particles from "@tsparticles/svelte";
+    import Particles from "svelte-particles";
     import { loadFull } from "tsparticles";
     import { basic } from "tsparticles-demo-configs";
 

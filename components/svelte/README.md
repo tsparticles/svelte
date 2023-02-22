@@ -1,8 +1,8 @@
 [![banner](https://particles.js.org/images/banner3.png)](https://particles.js.org)
 
-# @tsparticles/svelte
+# svelte-particles
 
-[![npm](https://img.shields.io/npm/v/@tsparticles/svelte)](https://www.npmjs.com/package/@tsparticles/svelte) [![npm downloads](https://img.shields.io/npm/dm/@tsparticles/svelte)](https://www.npmjs.com/package/@tsparticles/svelte) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
+[![npm](https://img.shields.io/npm/v/svelte-particles)](https://www.npmjs.com/package/svelte-particles) [![npm downloads](https://img.shields.io/npm/dm/svelte-particles)](https://www.npmjs.com/package/svelte-particles) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
 
 Official [tsParticles](https://github.com/matteobruni/tsparticles) SvelteJS component
 
@@ -13,20 +13,20 @@ Official [tsParticles](https://github.com/matteobruni/tsparticles) SvelteJS comp
 ## Installation
 
 ```shell
-npm install @tsparticles/svelte
+npm install svelte-particles
 ```
 
 or
 
 ```shell
-yarn add @tsparticles/svelte
+yarn add svelte-particles
 ```
 
 ## Usage
 
 ```html
 <script>
-  import Particles from "@tsparticles/svelte";
+  import Particles from "svelte-particles";
   import { loadFull } from "tsparticles";
 
   let particlesUrl = "http://foo.bar/particles.json";
@@ -93,7 +93,7 @@ You can see a sample below:
   let ParticlesComponent;
 
   onMount(async () => {
-    const module = await import("@tsparticles/svelte");
+    const module = await import("svelte-particles");
 
     ParticlesComponent = module.default;
   });

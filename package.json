@@ -1,5 +1,5 @@
 {
-  "name": "@tsparticles/svelte-workspace",
+  "name": "svelte-particles-workspace",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -14,7 +14,6 @@
   },
   "workspaces": [
     "apps/*",
-    "components/*",
-    "components-legacy/*"
+    "components/*"
   ]
 }
