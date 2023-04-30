@@ -19,7 +19,7 @@ importers:
       '@rollup/plugin-commonjs': ^24.0.0
       '@rollup/plugin-json': ^6.0.0
       '@rollup/plugin-node-resolve': ^15.0.1
-      '@rollup/plugin-typescript': ^10.0.1
+      '@rollup/plugin-typescript': ^11.0.0
       '@tsconfig/svelte': ^3.0.0
       rollup: ^3.8.1
       rollup-plugin-css-only: ^4.3.0
@@ -44,7 +44,7 @@ importers:
       '@rollup/plugin-commonjs': 24.0.0_rollup@3.17.2
       '@rollup/plugin-json': 6.0.0_rollup@3.17.2
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.17.2
-      '@rollup/plugin-typescript': 10.0.1_xwywqb2dzsr2wgn6klf7lrrkxm
+      '@rollup/plugin-typescript': 11.1.0_xwywqb2dzsr2wgn6klf7lrrkxm
       '@tsconfig/svelte': 3.0.0
       rollup: 3.17.2
       rollup-plugin-css-only: 4.3.0_rollup@3.17.2
@@ -61,7 +61,7 @@ importers:
     specifiers:
       '@rollup/plugin-commonjs': ^24.0.0
       '@rollup/plugin-node-resolve': ^15.0.1
-      '@rollup/plugin-typescript': ^10.0.1
+      '@rollup/plugin-typescript': ^11.0.0
       '@tsconfig/svelte': ^3.0.0
       '@tsparticles/prettier-config': ^1.6.0
       prettier: ^2.8.3
@@ -80,7 +80,7 @@ importers:
     devDependencies:
       '@rollup/plugin-commonjs': 24.0.0_rollup@3.17.2
       '@rollup/plugin-node-resolve': 15.0.1_rollup@3.17.2
-      '@rollup/plugin-typescript': 10.0.1_xwywqb2dzsr2wgn6klf7lrrkxm
+      '@rollup/plugin-typescript': 11.1.0_xwywqb2dzsr2wgn6klf7lrrkxm
       '@tsconfig/svelte': 3.0.0
       '@tsparticles/prettier-config': 1.6.0_prettier@2.8.4
       prettier: 2.8.4
@@ -1456,8 +1456,8 @@ packages:
       rollup: 3.17.2
     dev: true
 
-  /@rollup/plugin-typescript/10.0.1_xwywqb2dzsr2wgn6klf7lrrkxm:
-    resolution: {integrity: sha512-wBykxRLlX7EzL8BmUqMqk5zpx2onnmRMSw/l9M1sVfkJvdwfxogZQVNUM9gVMJbjRLDR5H6U0OMOrlDGmIV45A==}
+  /@rollup/plugin-typescript/11.1.0_xwywqb2dzsr2wgn6klf7lrrkxm:
+    resolution: {integrity: sha512-86flrfE+bSHB69znnTV6kVjkncs2LBMhcTCyxWgRxLyfXfQrxg4UwlAqENnjrrxnSNS/XKCDJCl8EkdFJVHOxw==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.14.0||^3.0.0
