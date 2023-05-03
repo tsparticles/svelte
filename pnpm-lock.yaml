@@ -45,8 +45,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(rollup@3.17.2)(tslib@2.4.1)(typescript@4.9.4)
       '@tsconfig/svelte':
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^4.0.0
+        version: 4.0.0
       rollup:
         specifier: ^3.8.1
         version: 3.17.2
@@ -94,8 +94,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(rollup@3.17.2)(tslib@2.4.1)(typescript@4.9.4)
       '@tsconfig/svelte':
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^4.0.0
+        version: 4.0.0
       '@tsparticles/prettier-config':
         specifier: ^1.6.0
         version: 1.6.0(prettier@2.8.4)
@@ -1548,8 +1548,8 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: false
 
-  /@tsconfig/svelte@3.0.0:
-    resolution: {integrity: sha512-pYrtLtOwku/7r1i9AMONsJMVYAtk3hzOfiGNekhtq5tYBGA7unMve8RvUclKLMT3PrihvJqUmzsRGh0RP84hKg==}
+  /@tsconfig/svelte@4.0.0:
+    resolution: {integrity: sha512-NlCBbTpDFz6Outgs8JoqdQls9xAWPJAnjRnkqa60GQymjiAE3gliwNZ5TohZF3w3cZ4x8wpe0Ow5Y9hs1EnDXA==}
     dev: true
 
   /@tsparticles/prettier-config@1.6.0(prettier@2.8.4):
