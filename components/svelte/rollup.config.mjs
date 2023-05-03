@@ -1,8 +1,8 @@
 import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import pkg from './package.json' assert {type: 'json'};
-import {terser} from "rollup-plugin-terser";
+import pkg from "./package.json" assert { type: "json" };
+import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import sveltePreprocess from "svelte-preprocess";
 
@@ -16,16 +16,16 @@ const name = pkg.name
 export default {
     input: "src/index.ts",
     output: [
-        {file: pkg.module, format: "es", inlineDynamicImports: true},
-        {file: pkg.main, format: "umd", name, inlineDynamicImports: true},
+        { file: pkg.module, format: "es", inlineDynamicImports: true },
+        { file: pkg.main, format: "umd", name, inlineDynamicImports: true }
     ],
     plugins: [
         svelte({
-            preprocess: sveltePreprocess({sourceMap: !production}),
+            preprocess: sveltePreprocess({ sourceMap: !production }),
             compilerOptions: {
                 // enable run-time checks when not in production
-                dev: !production,
-            },
+                dev: !production
+            }
         }),
 
         // If you have external dependencies installed from
@@ -35,16 +35,16 @@ export default {
         // https://github.com/rollup/plugins/tree/master/packages/commonjs
         resolve({
             browser: true,
-            dedupe: ["svelte"],
+            dedupe: ["svelte"]
         }),
         commonjs(),
         typescript({
             sourceMap: !production,
-            inlineSources: !production,
+            inlineSources: !production
         }),
 
         // If we're building for production (npm run build
         // instead of npm run dev), minify
-        production && terser(),
-    ],
+        production && terser()
+    ]
 };
