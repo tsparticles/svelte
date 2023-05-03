@@ -5,12 +5,7 @@
 
     export let name: string;
 
-    let particlesConfig = {
-        ...basic,
-        fullScreen: {
-            enable: false
-        }
-    };
+    let particlesConfig = basic;
 
     let ref = {};
 
@@ -35,16 +30,6 @@
 </main>
 
 <style>
-    :global(.my-class) {
-        box-sizing: border-box;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height: 50vh;
-        padding: 10px;
-        border: 1rem solid #ff3e00;
-    }
-
     main {
         text-align: center;
         padding: 1em;
@@ -62,10 +47,6 @@
     @media (min-width: 640px) {
         main {
             max-width: none;
-        }
-
-        :global(.my-class) {
-            width: 80%;
         }
     }
 </style>
