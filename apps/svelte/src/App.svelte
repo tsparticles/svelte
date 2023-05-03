@@ -25,7 +25,7 @@
 <main>
     <h1>Hello {name}!</h1>
     <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-    <Particles id="tsparticles" options={particlesConfig} on:particlesLoaded={handleParticlesLoaded}
+    <Particles id="tsparticles" class="my-class" options={particlesConfig} on:particlesLoaded={handleParticlesLoaded}
                particlesInit={particlesInit}/>
 </main>
 

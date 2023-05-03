@@ -5,6 +5,8 @@
   import type { ISourceOptions } from "tsparticles-engine";
   import { tsParticles } from "tsparticles-engine";
 
+  let cssClass = "";
+  export { cssClass as class };
   export let options: ISourceOptions = {};
   export let url = "";
   export let id = "tsparticles";
@@ -61,4 +63,4 @@
   });
 </script>
 
-<div {id} />
+<div {id} class={cssClass} />

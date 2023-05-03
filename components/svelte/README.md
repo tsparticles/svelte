@@ -63,6 +63,7 @@ yarn add svelte-particles
 
 <Particles
   id="tsparticles"
+  class="foo bar"
   options="{particlesConfig}"
   on:particlesLoaded="{onParticlesLoaded}"
   particlesInit="{particlesInit}"
@@ -72,6 +73,7 @@ yarn add svelte-particles
 
 <Particles
   id="tsparticles"
+  class="foo bar"
   url="{particlesUrl}"
   on:particlesLoaded="{onParticlesLoaded}"
   particlesInit="{particlesInit}"
@@ -133,6 +135,7 @@ You can see a sample below:
 <svelte:component
   this="{ParticlesComponent}"
   id="tsparticles"
+  class="foo bar"
   options="{particlesConfig}"
   on:particlesLoaded="{onParticlesLoaded}"
   particlesInit="{particlesInit}"
@@ -143,6 +146,7 @@ You can see a sample below:
 <svelte:component
   this="{ParticlesComponent}"
   id="tsparticles"
+  class="foo bar"
   url="{particlesUrl}"
   on:particlesLoaded="{onParticlesLoaded}"
   particlesInit="{particlesInit}"
