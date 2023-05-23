@@ -25,6 +25,7 @@ yarn add svelte-particles
 ## Usage
 
 ```html
+
 <script>
     import Particles from "svelte-particles";
     import { loadFull } from "tsparticles";
@@ -34,16 +35,19 @@ yarn add svelte-particles
     let particlesConfig = {
         particles: {
             color: {
-                value: "#000",
+                value: "#000"
             },
             links: {
                 enable: true,
-                color: "#000",
+                color: "#000"
             },
             move: {
-                enable: true,
+                enable: true
             },
-        },
+            number: {
+                value: 100
+            }
+        }
     };
 
     let onParticlesLoaded = event => {
