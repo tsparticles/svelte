@@ -7,6 +7,9 @@
 
     let cssClass = "";
     export { cssClass as class };
+
+    let style = "";
+    export { style };
     export let options: ISourceOptions = {};
     export let url = "";
     export let id = "tsparticles";
@@ -36,7 +39,7 @@
         if (id) {
             const cb = container => {
                 dispatch(particlesLoadedEvent, {
-                    particles: container,
+                    particles: container
                 });
 
                 oldId = id;
@@ -57,10 +60,10 @@
             cb(container);
         } else {
             dispatch(particlesLoadedEvent, {
-                particles: undefined,
+                particles: undefined
             });
         }
     });
 </script>
 
-<div {id} class={cssClass} />
+<div {id} class={cssClass} style={style}></div>

@@ -25,29 +25,25 @@ yarn add svelte-particles
 ## Usage
 
 ```html
-
 <script>
     import Particles from "svelte-particles";
     import { loadFull } from "tsparticles";
 
-    let particlesUrl = "http://foo.bar/particles.json";
+    let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
 
     let particlesConfig = {
         particles: {
             color: {
-                value: "#000"
+                value: "#000",
             },
             links: {
                 enable: true,
-                color: "#000"
+                color: "#000",
             },
             move: {
-                enable: true
+                enable: true,
             },
-            number: {
-                value: 100
-            }
-        }
+        },
     };
 
     let onParticlesLoaded = event => {
@@ -67,6 +63,8 @@ yarn add svelte-particles
 
 <Particles
     id="tsparticles"
+    class="foo bar"
+    style=""
     options="{particlesConfig}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
@@ -76,6 +74,8 @@ yarn add svelte-particles
 
 <Particles
     id="tsparticles"
+    class="foo bar"
+    style=""
     url="{particlesUrl}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
@@ -102,7 +102,7 @@ You can see a sample below:
         ParticlesComponent = module.default;
     });
 
-    let particlesUrl = "http://foo.bar/particles.json";
+    let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
 
     let particlesConfig = {
         particles: {
@@ -115,6 +115,9 @@ You can see a sample below:
             },
             move: {
                 enable: true,
+            },
+            number: {
+                value: 100,
             },
         },
     };
@@ -137,6 +140,8 @@ You can see a sample below:
 <svelte:component
     this="{ParticlesComponent}"
     id="tsparticles"
+    class="foo bar"
+    style=""
     options="{particlesConfig}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
@@ -147,6 +152,8 @@ You can see a sample below:
 <svelte:component
     this="{ParticlesComponent}"
     id="tsparticles"
+    class="foo bar"
+    style=""
     url="{particlesUrl}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"

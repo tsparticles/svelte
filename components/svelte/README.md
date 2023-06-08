@@ -29,7 +29,7 @@ yarn add svelte-particles
     import Particles from "svelte-particles";
     import { loadFull } from "tsparticles";
 
-    let particlesUrl = "http://foo.bar/particles.json";
+    let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
 
     let particlesConfig = {
         particles: {
@@ -64,6 +64,7 @@ yarn add svelte-particles
 <Particles
     id="tsparticles"
     class="foo bar"
+    style=""
     options="{particlesConfig}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
@@ -74,6 +75,7 @@ yarn add svelte-particles
 <Particles
     id="tsparticles"
     class="foo bar"
+    style=""
     url="{particlesUrl}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
@@ -100,7 +102,7 @@ You can see a sample below:
         ParticlesComponent = module.default;
     });
 
-    let particlesUrl = "http://foo.bar/particles.json";
+    let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
 
     let particlesConfig = {
         particles: {
@@ -139,6 +141,7 @@ You can see a sample below:
     this="{ParticlesComponent}"
     id="tsparticles"
     class="foo bar"
+    style=""
     options="{particlesConfig}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
@@ -150,6 +153,7 @@ You can see a sample below:
     this="{ParticlesComponent}"
     id="tsparticles"
     class="foo bar"
+    style=""
     url="{particlesUrl}"
     on:particlesLoaded="{onParticlesLoaded}"
     particlesInit="{particlesInit}"
