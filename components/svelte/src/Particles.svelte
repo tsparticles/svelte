@@ -39,7 +39,7 @@
         if (id) {
             const cb = container => {
                 dispatch(particlesLoadedEvent, {
-                    particles: container
+                    particles: container,
                 });
 
                 oldId = id;
@@ -60,10 +60,10 @@
             cb(container);
         } else {
             dispatch(particlesLoadedEvent, {
-                particles: undefined
+                particles: undefined,
             });
         }
     });
 </script>
 
-<div {id} class={cssClass} style={style}></div>
+<div {id} class={cssClass} {style} />
