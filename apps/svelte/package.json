@@ -1,6 +1,6 @@
 {
   "name": "svelte-demo",
-  "version": "2.10.0",
+  "version": "2.10.1",
   "private": true,
   "scripts": {
     "build": "rollup -c",
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "sirv-cli": "^2.0.2",
-    "svelte-particles": "^2.10.0",
+    "svelte-particles": "^2.10.1",
     "tsparticles": "^2.10.1",
     "tsparticles-demo-configs": "^2.10.1"
   }
