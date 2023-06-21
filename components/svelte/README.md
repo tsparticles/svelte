@@ -43,6 +43,9 @@ yarn add svelte-particles
             move: {
                 enable: true,
             },
+            number: {
+                value: 100
+            }
         },
     };
 
@@ -172,6 +175,22 @@ If someone is experiencing the same error, please follow these steps:
 -   use the `preprocess` function in your svelte configuration file, like this: `preprocess: preprocess(),` (see this for example: <https://github.com/ivanhofer/sveltekit-typescript-showcase/blob/c824e45338ffc1a9c907c63d00a6a0af4884a0e9/svelte.config.js#L9>)
 
 After that, everything should work as expected.
+
+### SvelteKit
+
+If you have issues with SvelteKit, like you *Cannot use import statement outside a module*, change your `vite.config.ts` file like this:
+
+```ts
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+	plugins: [sveltekit()],
+	ssr: {
+		noExternal: ['tsparticles', 'tsparticles-engine', 'svelte-particles'] // add all tsparticles libraries here, they're not made for SSR, they're client only
+	}
+});
+```
 
 ## Demos
 
