@@ -44,8 +44,8 @@ yarn add svelte-particles
                 enable: true,
             },
             number: {
-                value: 100
-            }
+                value: 100,
+            },
         },
     };
 
@@ -178,17 +178,17 @@ After that, everything should work as expected.
 
 ### SvelteKit
 
-If you have issues with SvelteKit, like you *Cannot use import statement outside a module*, change your `vite.config.ts` file like this:
+If you have issues with SvelteKit, like you _Cannot use import statement outside a module_, change your `vite.config.ts` file like this:
 
 ```ts
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
+import { sveltekit } from "@sveltejs/kit/vite";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-	plugins: [sveltekit()],
-	ssr: {
-		noExternal: ['tsparticles', 'tsparticles-engine', 'svelte-particles'] // add all tsparticles libraries here, they're not made for SSR, they're client only
-	}
+    plugins: [sveltekit()],
+    ssr: {
+        noExternal: ["tsparticles", "tsparticles-engine", "svelte-particles"], // add all tsparticles libraries here, they're not made for SSR, they're client only
+    },
 });
 ```
 
