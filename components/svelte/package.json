@@ -97,7 +97,7 @@
     "prettier-plugin-svelte": "^2.10.1",
     "rollup": "^3.24.0",
     "rollup-plugin-svelte": "^7.1.5",
-    "svelte": "^3.59.1",
+    "svelte": "^4.0.0",
     "svelte-check": "^3.4.3",
     "svelte-preprocess": "^5.0.4",
     "tslib": "^2.5.3",
