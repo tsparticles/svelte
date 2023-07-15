@@ -1,7 +1,10 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "packages": ["apps/*", "components/*"],
-  "version": "2.10.1",
+  "packages": [
+    "apps/*",
+    "components/*"
+  ],
+  "version": "2.11.0",
   "npmClient": "pnpm",
   "conventionalCommits": true,
   "command": {
