@@ -27,7 +27,8 @@ yarn add svelte-particles
 ```html
 <script>
     import Particles from "svelte-particles";
-    import { loadFull } from "tsparticles";
+    //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+    import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
     let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
 
@@ -60,7 +61,8 @@ yarn add svelte-particles
         // you can use main to customize the tsParticles instance adding presets or custom shapes
         // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
         // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(engine);
+        //await loadFull(engine);
+        await loadSlim(engine);
     };
 </script>
 
@@ -95,7 +97,8 @@ You can see a sample below:
 ```html
 <script>
     import { onMount } from "svelte";
-    import { loadFull } from "tsparticles";
+    //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+    import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
 
     let ParticlesComponent;
 
@@ -132,11 +135,12 @@ You can see a sample below:
         // (from the core library) methods like play, pause, refresh, start, stop
     };
 
-    let particlesInit = async main => {
+    let particlesInit = async engine => {
         // you can use main to customize the tsParticles instance adding presets or custom shapes
         // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
         // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(main);
+        //await loadFull(main);
+        await loadSlim(engine);
     };
 </script>
 
@@ -187,7 +191,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     plugins: [sveltekit()],
     ssr: {
-        noExternal: ["tsparticles", "tsparticles-engine", "svelte-particles"], // add all tsparticles libraries here, they're not made for SSR, they're client only
+        noExternal: ["tsparticles", "tsparticles-slim", "tsparticles-engine", "svelte-particles"], // add all tsparticles libraries here, they're not made for SSR, they're client only
     },
 });
 ```
