@@ -93,7 +93,7 @@
     "@rollup/plugin-typescript": "^11.1.2",
     "@tsconfig/svelte": "^5.0.0",
     "@tsparticles/prettier-config": "^1.11.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "prettier-plugin-svelte": "^3.0.0",
     "rollup": "^3.26.2",
     "rollup-plugin-svelte": "^7.1.6",
