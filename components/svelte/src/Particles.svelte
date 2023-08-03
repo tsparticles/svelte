@@ -1,7 +1,7 @@
 <svelte:options accessors={true} />
 
 <script lang="ts">
-    import { afterUpdate, createEventDispatcher } from "svelte";
+    import { afterUpdate, createEventDispatcher, onDestroy } from "svelte";
     import type { ISourceOptions } from "tsparticles-engine";
     import { tsParticles } from "tsparticles-engine";
 
@@ -21,13 +21,8 @@
 
     let oldId = id;
 
-    afterUpdate(async () => {
-        tsParticles.init();
-
-        if (particlesInit) {
-            await particlesInit(tsParticles);
-        }
-
+    function destroyOldContainer()
+    {
         if (oldId) {
             const oldContainer = tsParticles.dom().find(c => c.id === oldId);
 
@@ -35,6 +30,16 @@
                 oldContainer.destroy();
             }
         }
+    }
+
+    afterUpdate(async () => {
+        tsParticles.init();
+
+        if (particlesInit) {
+            await particlesInit(tsParticles);
+        }
+
+        destroyOldContainer();
 
         if (id) {
             const cb = container => {
@@ -64,6 +69,8 @@
             });
         }
     });
+	
+    onDestroy(destroyOldContainer);
 </script>
 
 <div {id} class={cssClass} {style} />
