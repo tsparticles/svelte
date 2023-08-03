@@ -10,6 +10,7 @@ declare module "svelte-particles" {
         url?: string;
         id?: string;
         class?: string;
+        style?: string;
         particlesInit: (engine: Engine) => Promise<void>;
     };
     type ParticlesEvents = CustomEventWrapper<{
