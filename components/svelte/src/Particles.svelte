@@ -21,8 +21,7 @@
 
     let oldId = id;
 
-    function destroyOldContainer()
-    {
+    function destroyOldContainer() {
         if (oldId) {
             const oldContainer = tsParticles.dom().find(c => c.id === oldId);
 
@@ -69,7 +68,7 @@
             });
         }
     });
-	
+
     onDestroy(destroyOldContainer);
 </script>
 

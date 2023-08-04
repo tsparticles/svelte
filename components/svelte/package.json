@@ -7,8 +7,8 @@
     "build:ci": "pnpm run prettify:ci:src && pnpm run prettify:ci:readme && rollup -c",
     "prettify:ci:src": "prettier --check --plugin-search-dir=. ./src/*",
     "prettify:ci:readme": "prettier --check --plugin-search-dir=. ./README.md",
-    "prettify:src": "prettier --write --plugin-search-dir=. ./src/*",
-    "prettify:readme": "prettier --write --plugin-search-dir=. ./README.md",
+    "prettify:src": "prettier --write --plugin=\"prettier-plugin-svelte\" ./src/*",
+    "prettify:readme": "prettier --write --plugin=\"prettier-plugin-svelte\" ./README.md",
     "validate": "svelte-check"
   },
   "repository": {
@@ -84,23 +84,23 @@
     "svelte": ">=3"
   },
   "dependencies": {
-    "tsparticles-engine": "^2.11.0"
+    "tsparticles-engine": "^2.12.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
     "@tsconfig/svelte": "^5.0.0",
-    "@tsparticles/prettier-config": "^1.11.0",
-    "prettier": "^3.0.0",
-    "prettier-plugin-svelte": "^3.0.0",
-    "rollup": "^3.26.2",
+    "@tsparticles/prettier-config": "^1.12.0",
+    "prettier": "^3.0.1",
+    "prettier-plugin-svelte": "^3.0.3",
+    "rollup": "^3.27.1",
     "rollup-plugin-svelte": "^7.1.6",
-    "svelte": "^4.0.5",
+    "svelte": "^4.1.2",
     "svelte-check": "^3.4.6",
     "svelte-preprocess": "^5.0.4",
-    "tslib": "^2.6.0",
+    "tslib": "^2.6.1",
     "typescript": "~5.1.6"
   },
   "bugs": {

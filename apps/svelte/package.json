@@ -10,26 +10,26 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
     "@rollup/plugin-typescript": "^11.1.2",
     "@tsconfig/svelte": "^5.0.0",
-    "rollup": "^3.26.2",
+    "rollup": "^3.27.1",
     "rollup-plugin-css-only": "^4.3.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-svelte": "^7.1.6",
-    "svelte": "^4.0.5",
+    "svelte": "^4.1.2",
     "svelte-check": "^3.4.6",
     "svelte-preprocess": "^5.0.4",
-    "tslib": "^2.6.0",
+    "tslib": "^2.6.1",
     "typescript": "~5.1.6"
   },
   "dependencies": {
     "sirv-cli": "^2.0.2",
     "svelte-particles": "^2.11.0",
-    "tsparticles": "^2.11.0",
-    "tsparticles-demo-configs": "^2.11.0"
+    "tsparticles": "^2.12.0",
+    "tsparticles-demo-configs": "^2.12.0"
   }
 }
