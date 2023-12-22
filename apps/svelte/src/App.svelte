@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Particles from "svelte-particles";
+    import Particles from "@tsparticles/svelte";
     import { loadFull } from "tsparticles";
-    import configs from "tsparticles-demo-configs";
+    import configs from "@tsparticles/configs";
 
     export let name: string;
 

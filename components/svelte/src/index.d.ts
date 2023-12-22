@@ -1,7 +1,7 @@
 import type { SvelteComponentTyped } from "svelte";
-import type { ISourceOptions, Engine, Container } from "tsparticles-engine";
+import type { ISourceOptions, Engine, Container } from "@tsparticles/engine";
 
-declare module "svelte-particles" {
+declare module "@tsparticles/svelte" {
     type CustomEventWrapper<T> = {
         [K in keyof T]: CustomEvent<T[K]>;
     };

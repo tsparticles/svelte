@@ -4,6 +4,6 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [sveltekit()],
 	ssr: {
-		noExternal: ['tsparticles', 'tsparticles-engine', 'svelte-particles']
+		noExternal: ['tsparticles', '@tsparticles/engine', '@tsparticles/svelte']
 	}
 });

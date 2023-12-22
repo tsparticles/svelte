@@ -2,8 +2,8 @@
 
 <script lang="ts">
     import { afterUpdate, createEventDispatcher, onDestroy } from "svelte";
-    import type { ISourceOptions } from "tsparticles-engine";
-    import { tsParticles } from "tsparticles-engine";
+    import type { ISourceOptions } from "@tsparticles/engine";
+    import { tsParticles } from "@tsparticles/engine";
 
     let cssClass = "";
     export { cssClass as class };
@@ -23,7 +23,7 @@
 
     function destroyOldContainer() {
         if (oldId) {
-            const oldContainer = tsParticles.dom().find(c => c.id === oldId);
+            const oldContainer = tsParticles.dom().find(c => c.id.toString() === oldId);
 
             if (oldContainer) {
                 oldContainer.destroy();
@@ -49,17 +49,11 @@
                 oldId = id;
             };
 
-            let container;
-
-            if (url) {
-                container = await tsParticles.loadJSON(id, url);
-            } else if (options) {
-                container = await tsParticles.load(id, options);
-            } else {
-                console.error("You must specify options or url to load tsParticles");
-
-                return;
-            }
+            const container = await tsParticles.load({
+                id,
+                options,
+                url,
+            });
 
             cb(container);
         } else {

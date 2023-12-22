@@ -1,8 +1,8 @@
 [![banner](https://particles.js.org/images/banner3.png)](https://particles.js.org)
 
-# svelte-particles
+# @tsparticles/svelte
 
-[![npm](https://img.shields.io/npm/v/svelte-particles)](https://www.npmjs.com/package/svelte-particles) [![npm downloads](https://img.shields.io/npm/dm/svelte-particles)](https://www.npmjs.com/package/svelte-particles) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
+[![npm](https://img.shields.io/npm/v/@tsparticles/svelte)](https://www.npmjs.com/package/@tsparticles/svelte) [![npm downloads](https://img.shields.io/npm/dm/@tsparticles/svelte)](https://www.npmjs.com/package/@tsparticles/svelte) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
 
 Official [tsParticles](https://github.com/matteobruni/tsparticles) SvelteJS component
 
@@ -13,22 +13,22 @@ Official [tsParticles](https://github.com/matteobruni/tsparticles) SvelteJS comp
 ## Installation
 
 ```shell
-npm install svelte-particles
+npm install @tsparticles/svelte
 ```
 
 or
 
 ```shell
-yarn add svelte-particles
+yarn add @tsparticles/svelte
 ```
 
 ## Usage
 
 ```html
 <script>
-    import Particles from "svelte-particles";
+    import Particles from "@tsparticles/svelte";
     //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-    import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
+    import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
     let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
 
@@ -98,12 +98,12 @@ You can see a sample below:
 <script>
     import { onMount } from "svelte";
     //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-    import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
+    import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
     let ParticlesComponent;
 
     onMount(async () => {
-        const module = await import("svelte-particles");
+        const module = await import("@tsparticles/svelte");
 
         ParticlesComponent = module.default;
     });
@@ -191,7 +191,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
     plugins: [sveltekit()],
     ssr: {
-        noExternal: ["tsparticles", "tsparticles-slim", "tsparticles-engine", "svelte-particles"], // add all tsparticles libraries here, they're not made for SSR, they're client only
+        noExternal: ["tsparticles", "@tsparticles/slim", "@tsparticles/engine", "@tsparticles/svelte"], // add all tsparticles libraries here, they're not made for SSR, they're client only
     },
 });
 ```
