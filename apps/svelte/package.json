@@ -29,6 +29,7 @@
   "dependencies": {
     "sirv-cli": "^2.0.2",
     "@tsparticles/svelte": "workspace:^",
+    "@tsparticles/engine": "^3.0.2",
     "tsparticles": "^3.0.2",
     "@tsparticles/configs": "^3.0.2"
   }

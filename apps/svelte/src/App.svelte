@@ -1,7 +1,13 @@
 <script lang="ts">
-    import Particles from "@tsparticles/svelte";
-    import { loadFull } from "tsparticles";
     import configs from "@tsparticles/configs";
+    import type { Engine } from "@tsparticles/engine";
+    import Particles, { particlesInit } from "@tsparticles/svelte";
+    import { loadFull } from "tsparticles";
+    import type { EventHandler } from "svelte/elements";
+
+    void particlesInit(async (engine: Engine) => {
+        await loadFull(engine);
+    });
 
     export let name: string;
 
@@ -9,24 +15,19 @@
 
     let ref = {};
 
-    let handleParticlesLoaded = (e) => {
+    let handleParticlesLoaded = (e: EventHandler<Container | undefined>) => {
         const container = e.detail.particles;
 
         console.log(container);
 
         // use container to call its methods
     };
-
-    let particlesInit = async (main) => {
-        await loadFull(main);
-    };
 </script>
 
 <main>
     <h1>Hello {name}!</h1>
     <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-    <Particles id="tsparticles" class="my-class" options={particlesConfig} on:particlesLoaded={handleParticlesLoaded}
-               particlesInit={particlesInit} />
+    <Particles id="tsparticles" class="my-class" options={particlesConfig} on:particlesLoaded={handleParticlesLoaded}/>
 </main>
 
 <style>
