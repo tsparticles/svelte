@@ -1,8 +1,8 @@
 [![banner](https://particles.js.org/images/banner3.png)](https://particles.js.org)
 
-# svelte-particles
+# @tsparticles/svelte
 
-[![npm](https://img.shields.io/npm/v/svelte-particles)](https://www.npmjs.com/package/svelte-particles) [![npm downloads](https://img.shields.io/npm/dm/svelte-particles)](https://www.npmjs.com/package/svelte-particles) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
+[![npm](https://img.shields.io/npm/v/@tsparticles/svelte)](https://www.npmjs.com/package/@tsparticles/svelte) [![npm downloads](https://img.shields.io/npm/dm/@tsparticles/svelte)](https://www.npmjs.com/package/@tsparticles/svelte) [![GitHub Sponsors](https://img.shields.io/github/sponsors/matteobruni)](https://github.com/sponsors/matteobruni)
 
 Official [tsParticles](https://github.com/matteobruni/tsparticles) SvelteJS component
 
@@ -13,77 +13,78 @@ Official [tsParticles](https://github.com/matteobruni/tsparticles) SvelteJS comp
 ## Installation
 
 ```shell
-npm install svelte-particles
+npm install @tsparticles/svelte
 ```
 
 or
 
 ```shell
-yarn add svelte-particles
+yarn add @tsparticles/svelte
 ```
 
 ## Usage
 
 ```html
 <script>
-    import Particles from "svelte-particles";
-    //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-    import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
+	import Particles, { particlesInit } from '@tsparticles/svelte';
+	//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+	import { loadSlim } from '@tsparticles/slim'; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
-    let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
+	let particlesUrl = 'http://foo.bar/particles.json'; // placeholder, replace it with a real url
 
-    let particlesConfig = {
-        particles: {
-            color: {
-                value: "#000",
-            },
-            links: {
-                enable: true,
-                color: "#000",
-            },
-            move: {
-                enable: true,
-            },
-            number: {
-                value: 100,
-            },
-        },
-    };
+	let particlesConfig = {
+		particles: {
+			color: {
+				value: '#000'
+			},
+			links: {
+				enable: true,
+				color: '#000'
+			},
+			move: {
+				enable: true
+			},
+			number: {
+				value: 100
+			}
+		}
+	};
 
-    let onParticlesLoaded = event => {
-        const particlesContainer = event.detail.particles;
+	let onParticlesLoaded = (event) => {
+		const particlesContainer = event.detail.particles;
 
-        // you can use particlesContainer to call all the Container class
-        // (from the core library) methods like play, pause, refresh, start, stop
-    };
+		// you can use particlesContainer to call all the Container class
+		// (from the core library) methods like play, pause, refresh, start, stop
+	};
 
-    let particlesInit = async engine => {
-        // you can use main to customize the tsParticles instance adding presets or custom shapes
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadFull(engine);
-        await loadSlim(engine);
-    };
+	void particlesInit(async (engine) => {
+		// call this once per app
+		// you can use main to customize the tsParticles instance adding presets or custom shapes
+		// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+		// starting from v2 you can add only the features you need reducing the bundle size
+		//await loadFull(engine);
+		await loadSlim(engine);
+	});
 </script>
 
 <Particles
-    id="tsparticles"
-    class="foo bar"
-    style=""
-    options="{particlesConfig}"
-    on:particlesLoaded="{onParticlesLoaded}"
-    particlesInit="{particlesInit}"
+	id="tsparticles"
+	class="put your classes here"
+	style=""
+	options="{particlesConfig}"
+	on:particlesLoaded="{onParticlesLoaded}"
+	particlesInit="{particlesInit}"
 />
 
 <!-- or -->
 
 <Particles
-    id="tsparticles"
-    class="foo bar"
-    style=""
-    url="{particlesUrl}"
-    on:particlesLoaded="{onParticlesLoaded}"
-    particlesInit="{particlesInit}"
+	id="tsparticles"
+	class="put your classes here"
+	style=""
+	url="{particlesUrl}"
+	on:particlesLoaded="{onParticlesLoaded}"
+	particlesInit="{particlesInit}"
 />
 ```
 
@@ -96,74 +97,76 @@ You can see a sample below:
 
 ```html
 <script>
-    import { onMount } from "svelte";
-    //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-    import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
+	import { particlesInit } from '@tsparticles/svelte';
+	import { onMount } from 'svelte';
+	//import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
+	import { loadSlim } from '@tsparticles/slim'; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 
-    let ParticlesComponent;
+	let ParticlesComponent;
 
-    onMount(async () => {
-        const module = await import("svelte-particles");
+	onMount(async () => {
+		const module = await import('@tsparticles/svelte');
 
-        ParticlesComponent = module.default;
-    });
+		ParticlesComponent = module.default;
+	});
 
-    let particlesUrl = "http://foo.bar/particles.json"; // placeholder, replace it with a real url
+	let particlesUrl = 'http://foo.bar/particles.json'; // placeholder, replace it with a real url
 
-    let particlesConfig = {
-        particles: {
-            color: {
-                value: "#000",
-            },
-            links: {
-                enable: true,
-                color: "#000",
-            },
-            move: {
-                enable: true,
-            },
-            number: {
-                value: 100,
-            },
-        },
-    };
+	let particlesConfig = {
+		particles: {
+			color: {
+				value: '#000'
+			},
+			links: {
+				enable: true,
+				color: '#000'
+			},
+			move: {
+				enable: true
+			},
+			number: {
+				value: 100
+			}
+		}
+	};
 
-    let onParticlesLoaded = event => {
-        const particlesContainer = event.detail.particles;
+	let onParticlesLoaded = (event) => {
+		const particlesContainer = event.detail.particles;
 
-        // you can use particlesContainer to call all the Container class
-        // (from the core library) methods like play, pause, refresh, start, stop
-    };
+		// you can use particlesContainer to call all the Container class
+		// (from the core library) methods like play, pause, refresh, start, stop
+	};
 
-    let particlesInit = async engine => {
-        // you can use main to customize the tsParticles instance adding presets or custom shapes
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadFull(main);
-        await loadSlim(engine);
-    };
+	void particlesInit(async (engine) => {
+		// call this once per app
+		// you can use main to customize the tsParticles instance adding presets or custom shapes
+		// this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+		// starting from v2 you can add only the features you need reducing the bundle size
+		//await loadFull(main);
+		await loadSlim(engine);
+	});
 </script>
 
 <svelte:component
-    this="{ParticlesComponent}"
-    id="tsparticles"
-    class="foo bar"
-    style=""
-    options="{particlesConfig}"
-    on:particlesLoaded="{onParticlesLoaded}"
-    particlesInit="{particlesInit}"
+	this="{ParticlesComponent}"
+	id="tsparticles"
+	class="put your classes here"
+	style=""
+	options="{particlesConfig}"
+	on:particlesLoaded="{onParticlesLoaded}"
+	particlesInit="{particlesInit}"
 />
 
 <!-- or -->
 
 <svelte:component
-    this="{ParticlesComponent}"
-    id="tsparticles"
-    class="foo bar"
-    style=""
-    url="{particlesUrl}"
-    on:particlesLoaded="{onParticlesLoaded}"
-    particlesInit="{particlesInit}"
+	this="{ParticlesComponent}"
+	id="tsparticles"
+	class="put your classes here"
+	style=""
+	url="{particlesUrl}"
+	on:particlesLoaded="{onParticlesLoaded}"
+	particlesInit="{particlesInit}"
 />
 ```
 
@@ -173,10 +176,10 @@ A user reported me a TypeScript error (#3963), and that's because this Svelte co
 
 If someone is experiencing the same error, please follow these steps:
 
--   install these packages: `typescript`, `svelte-preprocess`.
--   add a `tsconfig.json` file to your project, following this sample: <https://github.com/ivanhofer/sveltekit-typescript-showcase#configure-typescript> (see this for example: <https://github.com/ivanhofer/sveltekit-typescript-showcase/blob/main/tsconfig.json>)
--   import `svelte-preprocess` in your svelte configuration file, like this: `import preprocess from 'svelte-preprocess'` (see this for example: <https://github.com/ivanhofer/sveltekit-typescript-showcase/blob/c824e45338ffc1a9c907c63d00a6a0af4884a0e9/svelte.config.js#L2>)
--   use the `preprocess` function in your svelte configuration file, like this: `preprocess: preprocess(),` (see this for example: <https://github.com/ivanhofer/sveltekit-typescript-showcase/blob/c824e45338ffc1a9c907c63d00a6a0af4884a0e9/svelte.config.js#L9>)
+- install these packages: `typescript`, `svelte-preprocess`.
+- add a `tsconfig.json` file to your project, following this sample: <https://github.com/ivanhofer/sveltekit-typescript-showcase#configure-typescript> (see this for example: <https://github.com/ivanhofer/sveltekit-typescript-showcase/blob/main/tsconfig.json>)
+- import `svelte-preprocess` in your svelte configuration file, like this: `import preprocess from 'svelte-preprocess'` (see this for example: <https://github.com/ivanhofer/sveltekit-typescript-showcase/blob/c824e45338ffc1a9c907c63d00a6a0af4884a0e9/svelte.config.js#L2>)
+- use the `preprocess` function in your svelte configuration file, like this: `preprocess: preprocess(),` (see this for example: <https://github.com/ivanhofer/sveltekit-typescript-showcase/blob/c824e45338ffc1a9c907c63d00a6a0af4884a0e9/svelte.config.js#L9>)
 
 After that, everything should work as expected.
 
@@ -185,14 +188,14 @@ After that, everything should work as expected.
 If you have issues with SvelteKit, like you _Cannot use import statement outside a module_, change your `vite.config.ts` file like this:
 
 ```ts
-import { sveltekit } from "@sveltejs/kit/vite";
-import { defineConfig } from "vite";
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-    plugins: [sveltekit()],
-    ssr: {
-        noExternal: ["tsparticles", "tsparticles-slim", "tsparticles-engine", "svelte-particles"], // add all tsparticles libraries here, they're not made for SSR, they're client only
-    },
+	plugins: [sveltekit()],
+	ssr: {
+		noExternal: ['tsparticles', '@tsparticles/slim', '@tsparticles/engine', '@tsparticles/svelte'] // add all tsparticles libraries here, they're not made for SSR, they're client only
+	}
 });
 ```
 
