@@ -73,7 +73,6 @@ yarn add @tsparticles/svelte
 	style=""
 	options="{particlesConfig}"
 	on:particlesLoaded="{onParticlesLoaded}"
-	particlesInit="{particlesInit}"
 />
 
 <!-- or -->
@@ -84,7 +83,6 @@ yarn add @tsparticles/svelte
 	style=""
 	url="{particlesUrl}"
 	on:particlesLoaded="{onParticlesLoaded}"
-	particlesInit="{particlesInit}"
 />
 ```
 
@@ -154,7 +152,6 @@ You can see a sample below:
 	style=""
 	options="{particlesConfig}"
 	on:particlesLoaded="{onParticlesLoaded}"
-	particlesInit="{particlesInit}"
 />
 
 <!-- or -->
@@ -166,7 +163,6 @@ You can see a sample below:
 	style=""
 	url="{particlesUrl}"
 	on:particlesLoaded="{onParticlesLoaded}"
-	particlesInit="{particlesInit}"
 />
 ```
 
