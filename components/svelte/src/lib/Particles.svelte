@@ -16,8 +16,9 @@
 	export let url = '';
 	export let id = 'tsparticles';
 
-	const dispatch = createEventDispatcher(),
-		particlesLoadedEvent = 'particlesLoaded';
+	const dispatch = createEventDispatcher<{
+		particlesLoaded: { container: Container }
+	}>(), particlesLoadedEvent = 'particlesLoaded';
 
 	let oldId = id;
 
