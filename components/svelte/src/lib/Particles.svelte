@@ -9,6 +9,7 @@
 	let cssClass = '';
 	export { cssClass as class };
 	let canStart = false;
+	let mounted = false;
 
 	let style = '';
 	export { style };
@@ -45,13 +46,14 @@
 	});
 
 	onMount(() => {
+		mounted = true;
 		void loadParticles();
 	});
 
 	async function loadParticles(): Promise<void> {
 		destroyOldContainer();
 
-		if (!canStart) {
+		if (!canStart || !mounted) {
 			return;
 		}
 
