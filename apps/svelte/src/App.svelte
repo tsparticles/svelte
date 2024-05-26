@@ -1,6 +1,6 @@
 <script lang="ts">
     import configs from "@tsparticles/configs";
-    import type { Engine } from "@tsparticles/engine";
+    import type { Container, Engine } from "@tsparticles/engine";
     import Particles, { particlesInit } from "@tsparticles/svelte";
     import { loadFull } from "tsparticles";
     import type { EventHandler } from "svelte/elements";

@@ -1,6 +1,6 @@
 {
 	"name": "@tsparticles/svelte",
-	"version": "3.0.0",
+	"version": "3.1.1",
 	"description": "Official tsParticles Svelte Component - Easily create highly customizable particle, confetti and fireworks animations and use them as animated backgrounds for your website. Ready to use components available also for Web Components, React, Vue.js (2.x and 3.x), Angular, jQuery, Preact, Riot.js, Solid.js, Inferno.",
 	"repository": {
 		"type": "git",
@@ -89,30 +89,30 @@
 		"access": "public"
 	},
 	"peerDependencies": {
-		"svelte": "^4.0.0"
+		"svelte": "^4.2.17"
 	},
 	"dependencies": {
-		"@tsparticles/engine": "^3.0.2"
+		"@tsparticles/engine": "^3.4.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.1",
-		"@sveltejs/kit": "^2.0.6",
-		"@sveltejs/package": "^2.2.4",
-		"@sveltejs/vite-plugin-svelte": "^3.0.1",
-		"@types/eslint": "^8.56.0",
-		"@typescript-eslint/eslint-plugin": "^6.15.0",
-		"@typescript-eslint/parser": "^6.15.0",
-		"eslint": "^8.56.0",
+		"@sveltejs/adapter-auto": "^3.2.1",
+		"@sveltejs/kit": "^2.5.10",
+		"@sveltejs/package": "^2.3.1",
+		"@sveltejs/vite-plugin-svelte": "^3.1.0",
+		"@types/eslint": "^8.56.10",
+		"@typescript-eslint/eslint-plugin": "^7.10.0",
+		"@typescript-eslint/parser": "^7.10.0",
+		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.35.1",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"publint": "^0.2.7",
-		"svelte": "^4.2.8",
-		"svelte-check": "^3.6.2",
+		"eslint-plugin-svelte": "^2.39.0",
+		"prettier": "^3.2.5",
+		"prettier-plugin-svelte": "^3.2.3",
+		"publint": "^0.2.8",
+		"svelte": "^4.2.17",
+		"svelte-check": "^3.7.1",
 		"tslib": "^2.6.2",
-		"typescript": "^5.3.3",
-		"vite": "^5.0.10"
+		"typescript": "^5.4.5",
+		"vite": "^5.2.11"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
