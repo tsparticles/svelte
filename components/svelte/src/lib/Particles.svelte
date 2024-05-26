@@ -9,6 +9,7 @@
 	let cssClass = '';
 	export { cssClass as class };
 	let canStart = false;
+	let mounted = false;
 
 	let style = '';
 	export { style };
@@ -16,8 +17,9 @@
 	export let url = '';
 	export let id = 'tsparticles';
 
-	const dispatch = createEventDispatcher(),
-		particlesLoadedEvent = 'particlesLoaded';
+	const dispatch = createEventDispatcher<{
+		particlesLoaded: { container: Container }
+	}>(), particlesLoadedEvent = 'particlesLoaded';
 
 	let oldId = id;
 
@@ -44,13 +46,14 @@
 	});
 
 	onMount(() => {
+		mounted = true;
 		void loadParticles();
 	});
 
 	async function loadParticles(): Promise<void> {
 		destroyOldContainer();
 
-		if (!canStart) {
+		if (!canStart || !mounted) {
 			return;
 		}
 
