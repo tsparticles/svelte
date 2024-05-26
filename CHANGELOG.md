@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/tsparticles/svelte/compare/v3.0.0...v3.1.0) (2024-05-26)
+
+
+### Bug Fixes
+
+* **deps:** update commitlint monorepo to v18 ([eb61347](https://github.com/tsparticles/svelte/commit/eb613471961d96cd580ef4f89cf1464083842426))
+* **deps:** update dependency lerna to v8 ([9274166](https://github.com/tsparticles/svelte/commit/92741664fecc4de46babb7bfd70341dd19fbec54))
+
+
+
+
+
 # [3.0.0](https://github.com/tsparticles/svelte/compare/v2.12.0...v3.0.0) (2023-12-24)
 
 
