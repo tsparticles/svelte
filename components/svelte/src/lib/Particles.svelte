@@ -87,4 +87,4 @@
 	});
 </script>
 
-<div {id} class={cssClass} {style} />
+<div {id} class={cssClass} {style} ></div>

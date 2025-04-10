@@ -370,3 +370,6 @@ size-plugin.json
 size-plugin-ssr.json
 
 .parcel-cache
+
+.nx/cache
+.nx/workspace-data
