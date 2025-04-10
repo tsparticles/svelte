@@ -9,7 +9,11 @@
         await loadFull(engine);
     });
 
-    export let name: string;
+    interface Props {
+        name: string;
+    }
+
+    let { name }: Props = $props();
 
     let particlesConfig = configs.basic;
 
