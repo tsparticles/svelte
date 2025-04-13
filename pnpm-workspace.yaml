@@ -1,3 +1,9 @@
 packages:
-  - 'apps/*'
-  - 'components/*'
+  - apps/*
+  - components/*
+
+onlyBuiltDependencies:
+  - '@tsparticles/engine'
+  - esbuild
+  - nx
+  - svelte-preprocess

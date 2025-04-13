@@ -1,26 +1,30 @@
-<svelte:options accessors={true} />
-
 <script lang="ts">
-	import { afterUpdate, createEventDispatcher, onDestroy, onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import type { Container, ISourceOptions } from '@tsparticles/engine';
 	import { tsParticles } from '@tsparticles/engine';
 	import { initialized } from './utils.js';
 
-	let cssClass = '';
-	export { cssClass as class };
-	let canStart = false;
-	let mounted = false;
+	interface Props {
+		particlesLoaded: CallableFunction | undefined;
+		class: string;
+		options: ISourceOptions;
+		url: string;
+		id: string;
+		style: string;
+		canStart: boolean;
+		mounted: boolean;
+	}
 
-	let style = '';
-	export { style };
-	export let options: ISourceOptions = {};
-	export let url = '';
-	export let id = 'tsparticles';
-
-	const dispatch = createEventDispatcher<{
-			particlesLoaded: { container: Container };
-		}>(),
-		particlesLoadedEvent = 'particlesLoaded';
+	let {
+		particlesLoaded,
+		class: cssClass,
+		options = {},
+		url = '',
+		id = 'tsparticles',
+		style: cssStyle = '',
+		canStart = false,
+		mounted = false
+	}: Props = $props();
 
 	let oldId = id;
 
@@ -60,9 +64,11 @@
 
 		if (id) {
 			const cb = (container?: Container) => {
-				dispatch(particlesLoadedEvent, {
-					particles: container
-				});
+				if (particlesLoaded) {
+					particlesLoaded({
+						particles: container
+					});
+				}
 
 				oldId = id;
 			};
@@ -75,15 +81,19 @@
 
 			cb(container);
 		} else {
-			dispatch(particlesLoadedEvent, {
-				particles: undefined
-			});
+			if (particlesLoaded) {
+				particlesLoaded({
+					particles: undefined
+				});
+			}
 		}
 	}
 
-	afterUpdate(async () => {
-		await loadParticles();
+	$effect(() => {
+		async () => {
+			await loadParticles();
+		};
 	});
 </script>
 
-<div {id} class={cssClass} {style} />
+<div {id} class={cssClass} style={cssStyle}></div>

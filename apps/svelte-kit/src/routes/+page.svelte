@@ -61,8 +61,10 @@
     {#await ParticlesConstructor}
         <p>Loading...</p>
     {:then component}
-        <svelte:component this={component} id="tsparticles"
-                          options="{particlesConfig}"/>
+        {@const SvelteComponent = component}
+        <SvelteComponent id="tsparticles"
+                          options="{particlesConfig}"
+                          style="z-index: -1"/>
     {:catch error}
         <p>Something went wrong: {error.message}</p>
     {/await}

@@ -1,10 +1,10 @@
-import App from './App.svelte';
+import { mount } from 'svelte'
+import './app.css'
+import App from './App.svelte'
 
-const app = new App({
-    target: document.body,
-    props: {
-        name: 'world'
-    }
-});
+const app = mount(App, {
+  target: document.getElementById('app')!,
+  props: { }
+})
 
-export default app;
+export default app

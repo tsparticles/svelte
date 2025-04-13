@@ -1,36 +1,27 @@
 {
-  "name": "svelte-demo",
-  "version": "3.1.1",
+  "name": "svelte",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "build:ci": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --host",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.8",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tsconfig/svelte": "^5.0.4",
-    "rollup": "^4.18.0",
-    "rollup-plugin-css-only": "^4.5.2",
-    "rollup-plugin-livereload": "^2.0.5",
-    "rollup-plugin-svelte": "^7.2.0",
-    "svelte": "^4.2.17",
-    "svelte-check": "^3.7.1",
-    "svelte-preprocess": "^5.1.4",
-    "tslib": "^2.6.2",
-    "typescript": "~5.4.5"
+    "svelte": "^5.20.2",
+    "svelte-check": "^4.1.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
   },
   "dependencies": {
-    "@tsparticles/configs": "^3.4.0",
-    "@tsparticles/engine": "^3.4.0",
+    "@tsparticles/configs": "^3.8.1",
+    "@tsparticles/engine": "^3.8.1",
     "@tsparticles/svelte": "workspace:^",
-    "sirv-cli": "^2.0.2",
-    "tsparticles": "^3.4.0"
+    "sirv-cli": "^3.0.1",
+    "tsparticles": "^3.8.1"
   }
 }
