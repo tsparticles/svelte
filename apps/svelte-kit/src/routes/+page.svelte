@@ -63,7 +63,8 @@
     {:then component}
         {@const SvelteComponent = component}
         <SvelteComponent id="tsparticles"
-                          options="{particlesConfig}"/>
+                          options="{particlesConfig}"
+                          style="z-index: -1"/>
     {:catch error}
         <p>Something went wrong: {error.message}</p>
     {/await}
