@@ -1,27 +1,30 @@
-<!-- @migration-task Error while migrating Svelte code: Can't migrate code with afterUpdate. Please migrate by hand. -->
-<svelte:options accessors={true} />
-
 <script lang="ts">
-	import { afterUpdate, createEventDispatcher, onDestroy, onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import type { Container, ISourceOptions } from '@tsparticles/engine';
 	import { tsParticles } from '@tsparticles/engine';
 	import { initialized } from './utils.js';
 
-	let cssClass = '';
-	export { cssClass as class };
-	let canStart = false;
-	let mounted = false;
+	interface Props {
+		particlesLoaded: CallableFunction;
+		class: string;
+		options: ISourceOptions;
+		url: string;
+		id: string;
+		style: string;
+		canStart: boolean;
+		mounted: boolean;
+	}
 
-	let style = '';
-	export { style };
-	export let options: ISourceOptions = {};
-	export let url = '';
-	export let id = 'tsparticles';
-
-	const dispatch = createEventDispatcher<{
-			particlesLoaded: { container: Container };
-		}>(),
-		particlesLoadedEvent = 'particlesLoaded';
+	let {
+		particlesLoaded,
+		class: cssClass,
+		options = {},
+		url = '',
+		id = 'tsparticles',
+		style: cssStyle = '',
+		canStart = false,
+		mounted = false
+	}: Props = $props();
 
 	let oldId = id;
 
@@ -61,7 +64,7 @@
 
 		if (id) {
 			const cb = (container?: Container) => {
-				dispatch(particlesLoadedEvent, {
+				particlesLoaded({
 					particles: container
 				});
 
@@ -76,15 +79,17 @@
 
 			cb(container);
 		} else {
-			dispatch(particlesLoadedEvent, {
+			particlesLoaded({
 				particles: undefined
 			});
 		}
 	}
 
-	afterUpdate(async () => {
-		await loadParticles();
+	$effect(() => {
+		async () => {
+			await loadParticles();
+		};
 	});
 </script>
 
-<div {id} class={cssClass} {style} ></div>
+<div {id} class={cssClass} style={cssStyle}></div>

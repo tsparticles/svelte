@@ -24,7 +24,7 @@
 </script>
 
 <main>
-  <Particles id="tsparticles" class="my-class" options={particlesConfig} on:particlesLoaded={handleParticlesLoaded}/>
+  <Particles id="tsparticles" class="my-class" options={particlesConfig} particlesLoaded={handleParticlesLoaded}/>
 
   <div>
     <a href="https://vite.dev" target="_blank" rel="noreferrer">
