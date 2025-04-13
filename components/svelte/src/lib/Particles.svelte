@@ -5,7 +5,7 @@
 	import { initialized } from './utils.js';
 
 	interface Props {
-		particlesLoaded: CallableFunction;
+		particlesLoaded: CallableFunction | undefined;
 		class: string;
 		options: ISourceOptions;
 		url: string;
@@ -64,9 +64,11 @@
 
 		if (id) {
 			const cb = (container?: Container) => {
-				particlesLoaded({
-					particles: container
-				});
+				if (particlesLoaded) {
+					particlesLoaded({
+						particles: container
+					});
+				}
 
 				oldId = id;
 			};
@@ -79,9 +81,11 @@
 
 			cb(container);
 		} else {
-			particlesLoaded({
-				particles: undefined
-			});
+			if (particlesLoaded) {
+				particlesLoaded({
+					particles: undefined
+				});
+			}
 		}
 	}
 
