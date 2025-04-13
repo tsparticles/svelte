@@ -15,7 +15,7 @@
   let particlesConfig = configs.basic;
 
   let handleParticlesLoaded = (e: EventHandler<Container | undefined>) => {
-    const container = e.detail.particles;
+    const container = e.particles;
 
     console.log(container);
 
@@ -24,8 +24,6 @@
 </script>
 
 <main>
-  <Particles id="tsparticles" class="my-class" options={particlesConfig} particlesLoaded={handleParticlesLoaded}/>
-
   <div>
     <a href="https://vite.dev" target="_blank" rel="noreferrer">
       <img src={viteLogo} class="logo" alt="Vite Logo" />
@@ -47,6 +45,8 @@
   <p class="read-the-docs">
     Click on the Vite and Svelte logos to learn more
   </p>
+
+  <Particles id="tsparticles" style="z-index: -1; position: fixed" options={particlesConfig} particlesLoaded={handleParticlesLoaded}/>
 </main>
 
 <style>
