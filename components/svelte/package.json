@@ -93,7 +93,7 @@
 		"svelte": ">=4.0.0 <6"
 	},
 	"dependencies": {
-		"@tsparticles/engine": "^4.0.0-beta.11"
+		"@tsparticles/engine": "^3.9.1"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.2.1",
